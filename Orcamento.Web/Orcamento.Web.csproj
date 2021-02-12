@@ -196,11 +196,13 @@
     <Content Include="Views\Home\Sobre.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Cadastro\Cliente.cshtml" />
+    <Content Include="Views\Cadastro\Produto.cshtml" />
+    <Content Include="Views\Cadastro\Orcamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cadastro\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
