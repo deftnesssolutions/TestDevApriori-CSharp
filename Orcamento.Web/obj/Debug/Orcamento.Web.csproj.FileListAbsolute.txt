@@ -1,3 +1,4 @@
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.csprojResolveAssemblyReference.cache
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\ApplicationInsights.config
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\roslyn\csc.exe
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -55,6 +56,5 @@ D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.Razor.res
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.resources.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.csprojResolveAssemblyReference.cache
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.pdb

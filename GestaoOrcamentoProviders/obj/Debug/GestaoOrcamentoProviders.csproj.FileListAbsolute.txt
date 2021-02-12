@@ -1,5 +1,0 @@
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoProviders\bin\Debug\GestaoOrcamentoProviders.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoProviders\bin\Debug\GestaoOrcamentoProviders.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoProviders\obj\Debug\GestaoOrcamentoProviders.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoProviders\obj\Debug\GestaoOrcamentoProviders.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoProviders\obj\Debug\GestaoOrcamentoProviders.csprojResolveAssemblyReference.cache

@@ -1,9 +1,0 @@
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoDAO.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoDAO.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoEntities.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoProviders.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoEntities.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\bin\Debug\GestaoOrcamentoProviders.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\obj\Debug\GestaoOrcamentoDAO.csprojResolveAssemblyReference.cache
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\obj\Debug\GestaoOrcamentoDAO.dll
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoDAO\obj\Debug\GestaoOrcamentoDAO.pdb

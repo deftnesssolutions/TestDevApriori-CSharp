@@ -30,20 +30,39 @@
                 @Html.ActionLink("Controle de Orçamento", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros
-                           <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Cliente", "Cliente", "Cadastro")</li>
-                            <li>@Html.ActionLink("Produto", "Produto", "Cadastro")</li>
-                            <li>@Html.ActionLink("Orçamento", "Orcamento", "Cadastro")</li>
+                @if (Request.IsAuthenticated) {
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros
+                               <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Cliente", "Cliente", "Cadastro")</li>
+                                <li>@Html.ActionLink("Produto", "Produto", "Cadastro")</li>
+                                <li>@Html.ActionLink("Orçamento", "Orcamento", "Cadastro")</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                            <li>
+                                <a href="#" >
+                                   Olá @User.Identity.Name
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                            <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
                         </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Acerca de", "Sobre", "Home")</li>
-                </ul>
+                    }
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Acerca de", "Sobre", "Home")</li>
+                    </ul>
+                 }
             </div>
         </div>
     </div>
