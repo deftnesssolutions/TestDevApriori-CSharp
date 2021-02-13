@@ -15,6 +15,9 @@ D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Orcamento.Web.dll.confi
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Orcamento.Web.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Orcamento.Web.pdb
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Antlr3.Runtime.dll
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoDAO.dll
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoEntities.dll
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoProviders.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.Agent.Intercept.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.DependencyCollector.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -33,6 +36,9 @@ D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\System.Web.WebPages.Dep
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\System.Web.WebPages.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\System.Web.WebPages.Razor.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\WebGrease.dll
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoDAO.pdb
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoEntities.pdb
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\GestaoOrcamentoProviders.pdb
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.DependencyCollector.xml
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\Microsoft.AI.Web.xml
@@ -55,6 +61,6 @@ D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.Razor.res
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.resources.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.csprojResolveAssemblyReference.cache
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.dll
 D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.pdb
-D:\Proyectos VisualStudio\TesteApriori\Orcamento.Web\obj\Debug\Orcamento.Web.csprojResolveAssemblyReference.cache

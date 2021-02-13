@@ -205,5 +205,10 @@ namespace ControleOrcamentoBAL
                 MessageBox.Show("este campo aceita somente uma virgula");
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

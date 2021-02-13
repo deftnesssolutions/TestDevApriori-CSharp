@@ -219,6 +219,20 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoOrcamentoDAO\GestaoOrcamentoDAO.csproj">
+      <Project>{2b22435c-5950-43a2-917c-d925b4d08da4}</Project>
+      <Name>GestaoOrcamentoDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestaoOrcamentoEntities\GestaoOrcamentoEntities.csproj">
+      <Project>{142fefe3-c323-4b05-a1c1-a3bd08fd9347}</Project>
+      <Name>GestaoOrcamentoEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestaoOrcamentoProviders\GestaoOrcamentoProviders.csproj">
+      <Project>{d6254343-417c-49f7-8dde-488dbb53c273}</Project>
+      <Name>GestaoOrcamentoProviders</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

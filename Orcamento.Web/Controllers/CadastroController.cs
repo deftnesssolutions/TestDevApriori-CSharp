@@ -26,20 +26,24 @@ namespace Orcamento.Web.Controllers
         [Authorize]
         public ActionResult Produto()
         {
-            return View(_listaProduto);
+            //return View(_listaProduto);
+            return View(ProdutoViewModel.GetAll());
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult RecuperarProduto(int id)
         {
-            return Json(_listaProduto.Find(x => x.Id == id));
+            //return Json(_listaProduto.Find(x => x.Id == id));
+            return Json(ProdutoViewModel.GetFindOrDefault(id));
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult ExcluirProduto(int id)
         {
+            #region Teste de funcionalidade com lista na memoria
+            /*
             var ret = false;
 
             var registroBD = _listaProduto.Find(x => x.Id == id);
@@ -47,30 +51,61 @@ namespace Orcamento.Web.Controllers
             {
                 _listaProduto.Remove(registroBD);
                 ret = true;
-            }
-
-            return Json(ret);
+            }*/
+            #endregion
+            return Json(ProdutoViewModel.Delete(id));
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult SalvarProduto(ProdutoViewModel model)
         {
-            var registroBD = _listaProduto.Find(x => x.Id == model.Id);
+            var resultado = "OK";
+            var mensagens = new List<string>();
+            var idSalvo = string.Empty;
 
-            if (registroBD == null)
+            if (!ModelState.IsValid)
             {
-                registroBD = model;
-                registroBD.Id = _listaProduto.Max(x => x.Id) + 1;
-                _listaProduto.Add(registroBD);
+                resultado = "AVISO";
+                mensagens = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList();
             }
             else
             {
-                registroBD.Nome = model.Nome;
-                registroBD.Preco = model.Preco;
+                try
+                {
+                    #region Teste funcionalidade com lista em memoria
+                    /*
+                    var registroBD = _listaProduto.Find(x => x.Id == model.Id);
+
+                    if (registroBD == null)
+                    {
+                        registroBD = model;
+                        registroBD.Id = _listaProduto.Max(x => x.Id) + 1;
+                        _listaProduto.Add(registroBD);
+                    }
+                    else
+                    {
+                        registroBD.Nome = model.Nome;
+                        registroBD.Preco = model.Preco;
+                    }
+                    idSalvo = registroBD.Id.ToString();
+                    */
+                    #endregion
+                    var id = model.Salvar();
+                    if(id > 0){
+                        idSalvo = id.ToString();
+                    }
+                    else{
+                        resultado = "ERRO";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado = "ERRO";
+                }
             }
 
-            return Json(registroBD);
+            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSalvo = idSalvo });
         }
 
         [Authorize]
