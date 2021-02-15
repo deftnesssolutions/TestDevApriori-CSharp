@@ -20,6 +20,7 @@ namespace Orcamento.Web.Models
         [Required(ErrorMessage = "Preencha o preço.")]
         public decimal Preco { get; set; }
 
+        //Recupera todos os produtos da tabela Produto do Banco de Dados
         public static List<ProdutoViewModel> GetAll() {
             var ret = new List<ProdutoViewModel>();
             using (IConnection Conexion = new Connection())
@@ -37,7 +38,7 @@ namespace Orcamento.Web.Models
             }
             return ret;
         }
-
+        //Recupera o produto pelo ID da Base de dados
         public static ProdutoViewModel GetFindOrDefault(int id)
         {
             ProdutoViewModel ret = null;
@@ -57,7 +58,7 @@ namespace Orcamento.Web.Models
             }
             return ret;
         }
-
+        //Deleta o produto da Base de Dados pelo ID 
         public static bool Delete(int id)
         {
            var ret = false;
@@ -74,6 +75,7 @@ namespace Orcamento.Web.Models
             return ret;
         }
 
+        //Persiste os dados do produto na Base de Dados
         public int Salvar()
         {
             var ret = 0;

@@ -25,10 +25,7 @@ namespace GO.Providers
         //Constructor
         public Connection()
         {
-            _connectionString = new SqlConnection(GlobalConnectionStrin());
-
-            //"Data Source=GUS;Initial Catalog=TesteApriori;Integrated Security=True"
-
+            _connectionString = new SqlConnection(GlobalConnectionStrin());         
         }
         #endregion
         #region Implementación de Metodos de la Interface

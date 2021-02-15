@@ -44,7 +44,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAOOrcDet.cs" />
+    <Compile Include="DAOPerfil.cs" />
     <Compile Include="DAOProduto.cs" />
+    <Compile Include="DAOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

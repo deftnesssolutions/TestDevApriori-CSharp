@@ -25,11 +25,15 @@ namespace Orcamento.Web.Controllers
             {
                 return View(login);
             }
-            var usuario = (login.Usuario == "ADMIN" && login.Senha == "ADMIN");
-   
-             if (usuario)
+            //var usuario = (login.Usuario == "ADMIN" && login.Senha == "ADMIN");
+            var usuario = UsuarioViewModel.ValidarUsuario(login.Usuario, login.Senha);
+            if (usuario != null)
              {
-                FormsAuthentication.SetAuthCookie(login.Usuario, login.LembrarMe);
+                //FormsAuthentication.SetAuthCookie(usuario.Nome, login.LembrarMe);
+                var tiket = FormsAuthentication.Encrypt(new FormsAuthenticationTicket(
+                   1, usuario.Nome, DateTime.Now, DateTime.Now.AddHours(12), login.LembrarMe, usuario.Id + "|" + usuario.RecuperarStringNomePerfis()));
+                var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, tiket);
+                Response.Cookies.Add(cookie);
                 if (Url.IsLocalUrl(returnUrl))
                  {
                      return Redirect(returnUrl);
