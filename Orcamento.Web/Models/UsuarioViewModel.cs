@@ -33,13 +33,17 @@ namespace Orcamento.Web.Models
             UsuarioViewModel ret = null;
             Usuario u = new Usuario();
             u = DAOUsuario.ValidarCredenciales(login, CriptoHelper.HashMD5(senha));
-            ret = new UsuarioViewModel
+            if (u != null)
             {
-                Id = u.Id,
-                Login = u.Login,
-                Senha = u.Senha,
-                Nome = u.Nome
-            }; 
+                ret = new UsuarioViewModel
+                {
+                    Id = u.Id,
+                    Login = u.Login,
+                    Senha = u.Senha,
+                    Nome = u.Nome
+                };
+            }
+            
             return ret;
         }
 

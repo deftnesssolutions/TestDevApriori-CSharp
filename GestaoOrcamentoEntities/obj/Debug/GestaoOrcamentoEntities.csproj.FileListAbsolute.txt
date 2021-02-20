@@ -2,4 +2,3 @@ D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoEntities\bin\Debug\GestaoO
 D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoEntities\bin\Debug\GestaoOrcamentoEntities.pdb
 D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoEntities\obj\Debug\GestaoOrcamentoEntities.dll
 D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoEntities\obj\Debug\GestaoOrcamentoEntities.pdb
-D:\Proyectos VisualStudio\TesteApriori\GestaoOrcamentoEntities\obj\Debug\GestaoOrcamentoEntities.csprojResolveAssemblyReference.cache

@@ -16,7 +16,7 @@ namespace Orcamento.Web.Helpers
      * Fecha: 24/01/2021
     #####*/
     public static class CriptoHelper
-    {       
+    {
         public static string HashMD5(string val)
         {
             var bytes = Encoding.ASCII.GetBytes(val);

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Controle de Orçamento</title>
@@ -13,7 +13,7 @@
         }({
             instrumentationKey:"f10bd19f-e660-4f81-82c0-219636037875"
         });
-        
+
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
@@ -30,17 +30,20 @@
                 @Html.ActionLink("Controle de Orçamento", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                @if (Request.IsAuthenticated) {
+                @if (Request.IsAuthenticated)
+                {
+
                     <ul class="nav navbar-nav">
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros
-                               <span class="caret"></span>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Cadastros
+                                <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Usuário", "Index", "CadUsuario")</li>
-                                <li>@Html.ActionLink("Perfil", "Index", "CadPerfil")</li>
-                                <li>@Html.ActionLink("Cliente", "Index", "CadCliente")</li>
-                                <li>@Html.ActionLink("Produto", "Index", "CadProduto")</li>
-                                <li>@Html.ActionLink("Orçamento", "Index", "CadOrcamento")</li>
+                                <li>@Html.ActionLink("Usuário", "Usuario", "Cadastro")</li>
+                                <li>@Html.ActionLink("Cliente", "Cliente", "Cadastro")</li>
+                                <li>@Html.ActionLink("Produto", "Produto", "Cadastro")</li>
+                                <li>@Html.ActionLink("Orçamento", "Orcamento", "Cadastro")</li>
                             </ul>
                         </li>
                     </ul>
@@ -50,8 +53,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
                             <li>
-                                <a href="#" >
-                                   Olá @User.Identity.Name
+                                <a href="#">
+                                    Olá @User.Identity.Name
                                     <span class="caret"></span>
                                 </a>
                             </li>
@@ -62,9 +65,11 @@
                 else
                 {
                     <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Acerca de", "Sobre", "Home")</li>
+                        <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
                     </ul>
-                 }
+                }
+
+
             </div>
         </div>
     </div>

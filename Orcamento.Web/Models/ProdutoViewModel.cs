@@ -21,11 +21,12 @@ namespace Orcamento.Web.Models
         public decimal Preco { get; set; }
 
         //Recupera todos os produtos da tabela Produto do Banco de Dados
-        public static List<ProdutoViewModel> GetAll() {
+        public static List<ProdutoViewModel> GetAll()
+        {
             var ret = new List<ProdutoViewModel>();
             using (IConnection Conexion = new Connection())
             {
-                IDAO<Produto> dao = new DAOProduto(Conexion); 
+                IDAO<Produto> dao = new DAOProduto(Conexion);
                 foreach (Produto p in dao.All())
                 {
                     ret.Add(new ProdutoViewModel
@@ -61,7 +62,7 @@ namespace Orcamento.Web.Models
         //Deleta o produto da Base de Dados pelo ID 
         public static bool Delete(int id)
         {
-           var ret = false;
+            var ret = false;
             using (IConnection Conexion = new Connection())
             {
                 IDAO<Produto> dao = new DAOProduto(Conexion);
@@ -71,7 +72,7 @@ namespace Orcamento.Web.Models
                     ret = dao.Delete(p);
                 }
             }
-            
+
             return ret;
         }
 
@@ -91,7 +92,8 @@ namespace Orcamento.Web.Models
                     ret = dao.Insert(p).Id;
                 }
             }
-            else {
+            else
+            {
                 using (IConnection Conexion = new Connection())
                 {
                     IDAO<Produto> dao = new DAOProduto(Conexion);
