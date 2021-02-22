@@ -63,7 +63,7 @@ namespace GO.DAO
                                 Id = reader.GetInt32(0),
                                 Login = reader.IsDBNull(1) == false ? reader.GetString(1).ToString().Trim() : "",
                                 Senha = reader.IsDBNull(2) == false ? reader.GetString(2).ToString().Trim() : "",
-                                Id_perfil = reader.GetInt32(3), 
+                                Nome = reader.IsDBNull(3) == false ? reader.GetString(3).ToString().Trim() : "",
                             };
                         }
                     }
@@ -102,7 +102,7 @@ namespace GO.DAO
                         entity.Id = reader.GetInt32(0);
                         entity.Login = reader.IsDBNull(1) == false ? reader.GetString(1).ToString().Trim() : "";
                         entity.Senha = reader.IsDBNull(2) == false ? reader.GetString(2).ToString().Trim() : "";
-                        entity.Id_perfil = reader.GetInt32(3);
+                        entity.Nome = reader.IsDBNull(3) == false ? reader.GetString(3).ToString().Trim() : "";
                     }
                 }
             }
@@ -117,7 +117,7 @@ namespace GO.DAO
                 cmd.Parameters.Add("@Id", SqlDbType.Int).Value = model.Id;
                 cmd.Parameters.Add("@Login", SqlDbType.NVarChar).Value = model.Login;
                 cmd.Parameters.Add("@Senha", SqlDbType.NVarChar).Value = model.Senha;
-                cmd.Parameters.Add("@Id_perfil", SqlDbType.Int).Value = model.Id_perfil;
+                cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = model.Nome;
                 model.Id = int.Parse(cmd.ExecuteScalar().ToString());
             }
             return model;
@@ -131,8 +131,8 @@ namespace GO.DAO
                 cmd.CommandText = "PA_UsuarioEdit";
                 cmd.Parameters.Add("@Id", SqlDbType.Int).Value = model.Id;
                 cmd.Parameters.Add("@Login", SqlDbType.NVarChar).Value = model.Login;
-                cmd.Parameters.Add("@Senha", SqlDbType.NVarChar).Value = (object) model.Senha ?? DBNull.Value;
-                cmd.Parameters.Add("@Id_perfil", SqlDbType.Int).Value = model.Id_perfil;
+                //cmd.Parameters.Add("@Senha", SqlDbType.NVarChar).Value = (object) model.Senha ?? DBNull.Value;
+                cmd.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = model.Nome;
                 cmd.ExecuteNonQuery();
             }
         }

@@ -7,80 +7,12 @@ using System.Web.Mvc;
 
 namespace Orcamento.Web.Controllers
 {
-    public class CadastroController : Controller
+    public class CadProdutoController : Controller
     {
         private const int _quantMaxLinhasPorPagina = 5;
-        #region CRUD Usuario
-        private const string _senhaPadrao = "{$127;$188}";
-
+        
         [Authorize]
-        public ActionResult Usuario()
-        {
-            ViewBag.SenhaPadrao = _senhaPadrao;
-            return View(UsuarioViewModel.GetAll());
-        }
-
-        [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult RecuperarUsuario(int id)
-        {
-            //return Json(_listaUsuario.Find(x => x.Id == id));
-            return Json(UsuarioViewModel.GetFindOrDefault(id));
-        }
-
-        [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult ExcluirUsuario(int id)
-        {
-            return Json(UsuarioViewModel.Delete(id));
-        }
-
-        [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult SalvarUsuario(UsuarioViewModel model)
-        {
-            var resultado = "OK";
-            var mensagens = new List<string>();
-            var idSalvo = string.Empty;
-
-            if (!ModelState.IsValid)
-            {
-                resultado = "AVISO";
-                mensagens = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList();
-            }
-            else
-            {
-                try
-                {
-                    if (model.Senha == _senhaPadrao)
-                    {
-                        model.Senha = "";
-                    }
-                    var id = model.Salvar();
-                    if (id > 0)
-                    {
-                        idSalvo = id.ToString();
-                    }
-                    else
-                    {
-                        resultado = "ERRO";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    resultado = "ERRO";
-                }
-            }
-
-            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSalvo = idSalvo });
-        }
-        #endregion
-        #region CRUD Produto
-        [Authorize]
-        public ActionResult Produto()
+        public ActionResult Index()
         {
             var lista = ProdutoViewModel.GetAll();
             ViewBag.ListaTamPag = new SelectList(new int[] { _quantMaxLinhasPorPagina, 10, 15, 20 }, _quantMaxLinhasPorPagina);
@@ -200,16 +132,6 @@ namespace Orcamento.Web.Controllers
 
             return Json(new { Resultado = resultado, Mensagens = mensagens, IdSalvo = idSalvo });
         }
-        #endregion
-        [Authorize]
-        public ActionResult Cliente()
-        {
-            return View();
-        }
-        [Authorize]
-        public ActionResult Orcamento()
-        {
-            return View();
-        }
+       
     }
 }

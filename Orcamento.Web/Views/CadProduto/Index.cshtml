@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Cadastro de Produtos";
 }
+<link href="~/Content/bootstrap-select.css" rel="stylesheet" />
 <style>
     #grid_cadastro > thead > tr th:nth-child(2) {
         width: 110px;
@@ -36,6 +37,7 @@
         <div id="cabecalho_grid" class="row">
             <div class="col-md-12">
                 <a id="btn_incluir" class="btn btn-success" role="button"><i class="glyphicon glyphicon-plus"></i> Incluir</a>
+                @Html.DropDownList("ddl_tam_pag", (SelectList)ViewBag.ListaTamPag, new { @class = "selectpicker" })
             </div>
         </div>
         <div class="row">
@@ -49,21 +51,51 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr data-id="@item.Id">
-                                <td>@item.Nome</td>
-                                <td>@item.Preco</td>
-                                <td>
-                                    <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i> Alterar</a>
-                                    <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
-                                </td>
-                            </tr>
-                                    }
+                        @{
+                            var linha = 0;
+                            foreach (var item in Model)
+                            {
+                                linha++;
+                                if (linha <= ViewBag.QuantMaxLinhasPorPagina)
+                                {
+                                    <tr data-id="@item.Id">
+                                        <td>@item.Nome</td>
+                                        <td>@item.Preco</td>
+                                        <td>
+                                            <a class="btn btn-primary btn-alterar" role="button"><i class="glyphicon glyphicon-pencil"></i> Alterar</a>
+                                            <a class="btn btn-danger btn-excluir" role="button"><i class="glyphicon glyphicon-trash"></i> Excluir</a>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                  break;
+
+                                }
+
+                            }
+                         }
                     </tbody>
                 </table>
             </div>
         </div>
+        @if (ViewBag.QuantPaginas > 1)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            @for (int i = 2; i <= ViewBag.QuantPaginas; i++)
+                            {
+                                <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        }
+
     </section>
 </div>
 @Html.Hidden("id_cadastro")
@@ -100,6 +132,7 @@
     </fieldset>
 </div>
 @section Scripts{
+<script src="~/Scripts/bootstrap-select.js"></script>
     <script>
         //Segurança CSRF
         function add_anti_forgery_token(data) {
@@ -160,7 +193,7 @@
         .on('click', '.btn-alterar', function () {
             var btn = $(this),
                 id = btn.closest('tr').attr('data-id'),
-                url = '@Url.Action("RecuperarProduto", "Cadastro")',
+                url = '@Url.Action("RecuperarProduto", "CadProduto")',
                 param = { 'id': id };
             $.post(url, add_anti_forgery_token(param), function (response) {
                 if (response) {
@@ -172,7 +205,7 @@
             var btn = $(this),
                 tr = btn.closest('tr'),
                 id = tr.attr('data-id'),
-                url = '@Url.Action("ExcluirProduto", "Cadastro")',
+                url = '@Url.Action("ExcluirProduto", "CadProduto")',
                 param = { 'id': id };
             bootbox.confirm({
                 message: "Realmente deseja excluir o produto?",
@@ -199,7 +232,7 @@
         })
         .on('click', '#btn_confirmar', function () {
             var btn = $(this),
-                url = '@Url.Action("SalvarProduto", "Cadastro")',
+                url = '@Url.Action("SalvarProduto", "CadProduto")',
                 param = {
                     Id: $('#id_cadastro').val(),
                     Nome: $('#txt_nome').val(),
@@ -233,7 +266,43 @@
                     $('#msg_erro').hide();
                 }
             });
+        })
+         .on('click', '.page-item', function () {
+             var btn = $(this),
+                 tamPag = $('#ddl_tam_pag').val(),
+                 pagina = btn.text(),
+                 url = '@Url.Action("ProdutoPagina", "CadProduto")',
+                 param = { 'pagina': pagina, 'tamPag': tamPag };
+             $.post(url, add_anti_forgery_token(param), function (response) {
+                 if (response) {
+                     var table = $('#grid_cadastro').find('tbody');
+                     table.empty();
+                     for (var i = 0; i < response.length; i++) {
+                         table.append(criar_linha_grid(response[i]));
+                     }
+                     btn.siblings().removeClass('active');
+                     btn.addClass('active');
+                 }
+             });
+         })
+        .on('change', '#ddl_tam_pag', function () {
+            var ddl = $(this),
+                tamPag = ddl.val(),
+                pagina = 1,
+                url = '@Url.Action("ProdutoPagina", "CadProduto")',
+                param = { 'pagina': pagina, 'tamPag': tamPag };
+            $.post(url, add_anti_forgery_token(param), function (response) {
+                if (response) {
+                    var table = $('#grid_cadastro').find('tbody');
+                    table.empty();
+                    for (var i = 0; i < response.length; i++) {
+                        table.append(criar_linha_grid(response[i]));
+                    }
+                    btn.siblings().removeClass('active');
+                    btn.addClass('active');
+                }
+            });
         });
-       
+
     </script>
 }

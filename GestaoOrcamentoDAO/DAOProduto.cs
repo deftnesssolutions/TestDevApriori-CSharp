@@ -12,7 +12,7 @@ namespace GO.DAO
 {
     public class DAOProduto:IDAO<Produto>
     {
-        private IConnection _conexion;
+       private IConnection _conexion;
         public DAOProduto(IConnection Conexion)
         {
             this._conexion = Conexion;
@@ -93,7 +93,6 @@ namespace GO.DAO
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "PA_ProdutoGetAll";
-
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)

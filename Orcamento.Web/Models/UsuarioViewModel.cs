@@ -25,8 +25,8 @@ namespace Orcamento.Web.Models
         [Required(ErrorMessage = "Informe o nome")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Informe o e-mail")]
-        public string Email { get; set; }
+        //[Required(ErrorMessage = "Informe o e-mail")]
+       // public string Email { get; set; }
 
         public static UsuarioViewModel ValidarUsuario(string login, string senha)
         {
@@ -126,8 +126,9 @@ namespace Orcamento.Web.Models
                 {
                     IDAO<Usuario> dao = new DAOUsuario(Conexion);
                     Usuario u = new Usuario();
+                    u.Id = this.Id;
                     u.Login = this.Login;
-                    u.Senha = CriptoHelper.HashMD5(this.Senha);
+                    //u.Senha = CriptoHelper.HashMD5(this.Senha);
                     u.Nome = this.Nome;
                     dao.Update(u);
                     ret = this.Id;

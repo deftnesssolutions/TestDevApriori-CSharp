@@ -12,6 +12,6 @@ namespace GO.Entities
         public string Login;
         public string Senha;
         public string Nome;
-        public int Id_perfil;
+        //public int Id_perfil;
     }
 }
